@@ -1,0 +1,90 @@
+
+### Test validation - missing pet name
+POST http://localhost:8080/api/pets
+Content-Type: application/json
+
+{
+  "name": "",
+  "species": "Bird",
+  "age": 3,
+  "ownerName": "Rahul"
+}
+
+### Test validation - missing species name
+POST http://localhost:8080/api/pets
+Content-Type: application/json
+
+{
+  "name": "kutty",
+  "species": "",
+  "age": 3,
+  "ownerName": "Rahul"
+}
+
+
+### View all pets
+GET http://localhost:8080/api/pets
+
+### Get pet by ID
+GET http://localhost:8080/api/pets/21
+### Update pet
+PUT http://localhost:8080/api/pets/21
+Content-Type: application/json
+
+{
+  "name": "Bruno",
+  "species": "Dog",
+  "age": 4,
+  "ownerName": "Rahul"
+}
+### Update pet
+PUT http://localhost:8080/api/pets/24
+Content-Type: application/json
+
+{
+  "name": "zeero",
+  "species": "dog",
+  "age": 2,
+  "ownerName": "kavi"
+}
+### Delete a pet
+DELETE http://localhost:8080/api/pets/20
+
+
+
+### View all pets
+GET http://localhost:8080/api/pets
+
+### Test pet not found
+GET http://localhost:8080/api/pets/18
+
+### Add a pet Dog
+POST http://localhost:8080/api/pets
+Content-Type: application/json
+
+{
+  "name": "Max",
+  "species": "Dog",
+  "age": 3,
+  "ownerName": "Test Owner"
+}
+### Test A - Senior cat
+POST http://localhost:8080/api/pets
+Content-Type: application/json
+
+{
+  "name": "KittyTest",
+  "species": "Cat",
+  "age": 21,
+  "ownerName": "Test Owner"
+}
+### Test B - Young bird
+POST http://localhost:8080/api/pets
+Content-Type: application/json
+
+{
+  "name": "BirdTest",
+  "species": "Bird",
+  "age": 0,
+  "ownerName": "Test Owner"
+}
